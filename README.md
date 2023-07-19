@@ -7,6 +7,11 @@ ref: https://laracasts.com/series/laravel-8-from-scratch
 `routes/web.php`  
 `resources/views`
 
+
 ## Lesson 6: Include CSS and JavaScript
 Resource source files in `resources/css` will compile down to `public` folder.
 For now, write directly to files in `public` folder.
+
+
+## Lesson 7: Make a Route and Link to It
+Make a new route in `routes/web.php`
