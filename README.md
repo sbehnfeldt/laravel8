@@ -20,3 +20,10 @@ Make a new route in `routes/web.php`
 * Variables in Blade templates
 * passing values for the variables to Blade at runtime
 * wildcards in routes
+
+## Lesson 9: Route Wildcard Constraints
+Route::get( '{placeholder})
+Route::where('placeholder', regex)
+Route::whereAlpha('placeholder')
+Route::whereAlphaNumeric('placeholder')
+Route::whereAlphaNumber('placeholder')
