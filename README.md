@@ -27,3 +27,12 @@ Route::where('placeholder', regex)
 Route::whereAlpha('placeholder')
 Route::whereAlphaNumeric('placeholder')
 Route::whereAlphaNumber('placeholder')
+
+## Lesson 10: Use Caching for Expensive Operations
+cache()->remember($key, $ttl, $callback)  
+$ttl can be time in seconds, or DateTimeInterval; for example:
+* now()->addMinutes(20)
+* now()->addHour()
+* now()->addDay()
+* now()->addDays(5)
+* now()->addWeeks(2)
