@@ -40,11 +40,37 @@ $ttl can be time in seconds, or DateTimeInterval; for example:
 
 ## Lesson 11: Use the Filesystem Class to Read a Directory
 File::files($directory)  
-Some Laravel Helper Functions:
+**Laravel Helper Functions:**
 * base_path()
 * app_path()
 * resource_path()  
+
 ModelNotFoundException()  
+
 Moving functionality to static functions of Model classes; eg:
 * Post::all()
 * Post::find($slug)
+
+
+## Lesson 12: Find a Composer Package for Post Metadata
+**yaml front matter**    
+`$> composer require spatie/yaml-front-matter`
+```php
+$doc = \Spatie\YamlFrontMatter\YamlFrontMatter::parseFile(
+    resource_path('posts/my-fourth-post.html');
+);
+$doc->body();
+$doc->matter();
+$doc->matter($attrib);
+$doc->$attrib;
+
+```
+**Laravel collections**  
+Laravel helper functions:  
+```php
+collect($array)
+ ->map(function($item) {
+    return ... 
+ });
+
+```
