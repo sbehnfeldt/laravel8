@@ -36,3 +36,15 @@ $ttl can be time in seconds, or DateTimeInterval; for example:
 * now()->addDay()
 * now()->addDays(5)
 * now()->addWeeks(2)
+
+
+## Lesson 11: Use the Filesystem Class to Read a Directory
+File::files($directory)  
+Some Laravel Helper Functions:
+* base_path()
+* app_path()
+* resource_path()  
+ModelNotFoundException()  
+Moving functionality to static functions of Model classes; eg:
+* Post::all()
+* Post::find($slug)
