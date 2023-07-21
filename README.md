@@ -93,3 +93,19 @@ Sorting:
 $collection->sortBy($field);
 $collection->sortByDesc($field);
 ```
+
+## Lesson 14: Blade: The Absolute Bassics
+```php
+<?= $placeholder ?>   // Standard PHP
+{{ $placeholder }}    // shorthand for above; escapes HTML
+{!! $placeholder !!}  // Does not escape HTML
+```
+```php
+@foreach ($items as $item)
+...
+@endforach
+@if ($condition)
+...
+@endif
+```
+* Laravel compiles Blade templates down to PHP files in storage/framework/views directory
