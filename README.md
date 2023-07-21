@@ -109,3 +109,42 @@ $collection->sortByDesc($field);
 @endif
 ```
 * Laravel compiles Blade templates down to PHP files in storage/framework/views directory
+
+
+## Lesson 15: Blade Layouts Two Ways
+### Sections  
+@yield('sectionName')  
+@extends('base')  
+@section('sectionName')..@endsection  
+
+### Components  
+* Component templates stored in resources/views/components
+
+**Component Template**  
+  _views/components/layout.blade.php_  
+  `{{ $content }}`
+
+* Tag name matches component filename: eg, `<x-layout>` loads `components/layout.blade.php`
+
+
+**Main Template**
+
+
+Runtime content provided as attribute in component tag:
+_view.blade.php_
+
+`<x-layout content="...">...</x-layout>`
+* Attribute name in component tag matches placeholder name in component file
+
+Runtime content provided in x-slot tag:
+```php
+<x-layout>
+	<x-slot name="content">...</x-slot>
+</x-layout>
+```
+
+Runtime content provided as default slot:
+
+`<x-layout>.....</x-layout>` w/o `<x-slot>` element replaces `{{ $slot }}` in component template
+
+
