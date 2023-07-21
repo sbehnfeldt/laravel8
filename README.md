@@ -147,4 +147,5 @@ Runtime content provided as default slot:
 
 `<x-layout>.....</x-layout>` w/o `<x-slot>` element replaces `{{ $slot }}` in component template
 
-
+## Lesson 16: A few Tweaks and Considerations
+Add Post::findOrFail() to complement Post::find()
