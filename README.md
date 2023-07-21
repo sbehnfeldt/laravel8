@@ -149,3 +149,10 @@ Runtime content provided as default slot:
 
 ## Lesson 16: A few Tweaks and Considerations
 Add Post::findOrFail() to complement Post::find()
+
+
+## Lesson 17: Environment Files and Database Connections
+Store config info (especially secret info!) in `.env`.  Never commit this file to github.
+
+Run migraitons:
+`$> php artisan migrate`
