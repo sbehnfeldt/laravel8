@@ -74,3 +74,22 @@ collect($array)
  });
 
 ```
+
+## Lesson 13: Collection Sorting and Caching
+Caching: 
+```php
+cache()->put( $key, $value );
+cache([ $key, $value ] );
+cache([ $key, $value ], $expiration );
+cache()->remember( $key, $ttl, $value|$callback);
+cache()->rememberForever($key, $value);
+cache()->forget( $key );
+$value = cache()->get( $key );
+$value = cache($key);
+```
+
+Sorting:
+```php
+$collection->sortBy($field);
+$collection->sortByDesc($field);
+```
