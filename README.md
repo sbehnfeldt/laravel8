@@ -167,3 +167,24 @@ Migrations described
 * tables are plural, models are singluar
 * model object tied to single row in table
 
+
+## Lesson 20: Make a Post Model and Migration
+`$> php artisan help make:migration`
+`$> php artisan make:migration create_posts_table`
+
+```php
+    public function up(): void
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string( 'title' );
+            $table->string( 'slug' );
+            $table->text( 'excerpt');
+            $table->text( 'body' );
+            $table->timestamp('published_at' )->nullable();
+            $table->timestamps();
+        });
+    }
+```
+`$> php artisan help make:model`
+`$> php artisan make:model Post`
