@@ -154,5 +154,9 @@ Add Post::findOrFail() to complement Post::find()
 ## Lesson 17: Environment Files and Database Connections
 Store config info (especially secret info!) in `.env`.  Never commit this file to github.
 
-Run migraitons:
+Run migrations:
 `$> php artisan migrate`
+
+
+## Lesson 18: Migrations: The Absolute Basics
+Migrations described
