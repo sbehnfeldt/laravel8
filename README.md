@@ -188,3 +188,6 @@ Migrations described
 ```
 `$> php artisan help make:model`
 `$> php artisan make:model Post`
+
+
+## Lesson 21: Eloquent Updates and HTML Escaping
