@@ -191,3 +191,19 @@ Migrations described
 
 
 ## Lesson 21: Eloquent Updates and HTML Escaping
+
+## Lesson 22: 3 Ways to Mitigate Mass Assignment Vulnerabilities
+Mass Assignment in constructors requires "$fillable" property in Model; 
+it specifies which properties can be mass-assigned.  All other properites
+will have their default values assigned.
+
+```php
+protected $fillable = [$field1, ...]
+$> Model::create([$field1 => $val1, ...])
+```
+`protected $guarded` specifies properies _not_ mass-assignable
+
+1. be explicit in $fillable property; or
+2. be explicit in $guarded property; or
+3. don't use mass-assignments at all 
+
