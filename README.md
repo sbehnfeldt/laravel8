@@ -160,3 +160,10 @@ Run migrations:
 
 ## Lesson 18: Migrations: The Absolute Basics
 Migrations described
+
+
+## Lesson 19: Eloquent and the Active Record Pattern
+* Every database table can have a corresponding Eloquent model
+* tables are plural, models are singluar
+* model object tied to single row in table
+
