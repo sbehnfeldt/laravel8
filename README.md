@@ -235,5 +235,8 @@ Behind the scenes, Laravel executes something like the following to find the val
 `Post::where('slug', $post)->firstOrFail()`
 
 ## Lesson 24: Your First Eloquent Relationship
-* Using "belongsTo" relation in Model for record in child table
+Using "belongsTo" relation in Model for record in child table
+
+## Lesson 25: Show All Posts Associated with a Category
+Using "hasMany" relation in Model for record in parent table
 
