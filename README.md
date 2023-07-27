@@ -240,3 +240,7 @@ Using "belongsTo" relation in Model for record in child table
 ## Lesson 25: Show All Posts Associated with a Category
 Using "hasMany" relation in Model for record in parent table
 
+## Lesson 26: Clockwork, and the N+1 Problem
+N+1 Problem: 1 main SQL call, plus 1 more call for each record returned in the main SQL call.
+Solution: Use the static ::with() call to reduce the number of database calls
+

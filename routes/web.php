@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('posts', [
-        'posts' => Post::all()->sortByDesc( 'date' )
+        'posts' => Post::with('category')->get()->sortBy( 'created_at' )
     ]);
 });
 
@@ -33,14 +33,14 @@ Route::get('/posts/{post:slug}', function (Post $post) {
     ]);
 });
 
-Route::get( '/categories', function() {
-    return view( 'categories', [
+Route::get('/categories', function () {
+    return view('categories', [
         'categories' => Category::all()
     ]);
 });
 
-Route::get( '/categories/{category:slug}', function( Category $category) {
-    return view( 'posts', [
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('posts', [
         'posts' => $category->posts
     ]);
 });
