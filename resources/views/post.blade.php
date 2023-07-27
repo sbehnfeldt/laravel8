@@ -15,6 +15,7 @@
             <div>
                 {!! $post->body !!}
             </div>
+            <p><a href="#">{{$post->category->name}}</a></p>
 
         </article>
 

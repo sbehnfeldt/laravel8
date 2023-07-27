@@ -233,3 +233,7 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 ```
 Behind the scenes, Laravel executes something like the following to find the value to pass to the callback:  
 `Post::where('slug', $post)->firstOrFail()`
+
+## Lesson 24: Your First Eloquent Relationship
+* Using "belongsTo" relation in Model for record in child table
+
