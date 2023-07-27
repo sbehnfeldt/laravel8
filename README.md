@@ -244,3 +244,10 @@ Using "hasMany" relation in Model for record in parent table
 N+1 Problem: 1 main SQL call, plus 1 more call for each record returned in the main SQL call.
 Solution: Use the static ::with() call to reduce the number of database calls
 
+## Lesson 27: Database Seeding Saves Time
+Useful for creating fake data early in development process, when running and re-running and re-re-running migrations 
+
+$> php artisan db:seed
+$> php artisan make::seeder
+$> php artisan migrate:fresh --seed # seed the database according to DatabaseSeeder::run()
+DatabaseSeeder::run()
