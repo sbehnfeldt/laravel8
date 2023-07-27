@@ -207,3 +207,29 @@ $> Model::create([$field1 => $val1, ...])
 2. be explicit in $guarded property; or
 3. don't use mass-assignments at all 
 
+
+## Lesson 23: Route Model Binding
+Binding a _route key_ to an underlying _Eloquent Model_:  
+```php
+Route::get('/posts/{post}', function (Post $post) {
+    return view('post', [
+        'post' => $post
+    ]);
+});
+```
+Notes:
+1. Wildcard name ({post}) must match variable name ($post)
+2. variable name must be type-hinted (Post $post)
+3. runtime-value of {post} is assumed to be primary key of a record in posts table => Post object
+
+ 
+To find by some unique column _other_ than the primary key:
+```php
+Route::get('/posts/{post:slug}', function (Post $post) {
+    return view('post', [
+        'post' => $post
+    ]);
+});
+```
+Behind the scenes, Laravel executes something like the following to find the value to pass to the callback:  
+`Post::where('slug', $post)->firstOrFail()`
