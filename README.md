@@ -251,3 +251,7 @@ $> php artisan db:seed
 $> php artisan make::seeder
 $> php artisan migrate:fresh --seed # seed the database according to DatabaseSeeder::run()
 DatabaseSeeder::run()
+
+## Lesson 28: Turbo Boost With Factories
+Use factories to improve seeding
+
