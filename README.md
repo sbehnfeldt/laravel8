@@ -257,3 +257,7 @@ Use factories to improve seeding
 
 ## Lesson 29: View All Posts by an Author
 
+## Lesson 30: Eager Load Relationships on an Existing Model
+* load() method
+* $with property
+* without() method to override the Model's $with property
