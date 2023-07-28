@@ -261,3 +261,6 @@ Use factories to improve seeding
 * load() method
 * $with property
 * without() method to override the Model's $with property
+
+
+## Lesson 31 Convert the HTML and CSS to Blade
