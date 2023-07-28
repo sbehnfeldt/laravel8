@@ -262,5 +262,9 @@ Use factories to improve seeding
 * $with property
 * without() method to override the Model's $with property
 
+## Lesson 31: Convert the HTML and CSS to Blade
 
-## Lesson 31 Convert the HTML and CSS to Blade
+## Lesson 32: Blade Components and CSS Grids
+* Component props
+* Timestamps are instances of Carbon objects
+* @props() in Blade components

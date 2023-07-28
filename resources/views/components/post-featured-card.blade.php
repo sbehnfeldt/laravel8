@@ -1,14 +1,14 @@
-@props(['post'])
+@props([ 'post' ])
 <article
-        {{$attributes->merge( ['class' => "transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl"])}}
-        >
-    <div class="py-6 px-5">
-        <div>
-            <img src="/images/illustration-3.png" alt="Blog Post illustration" class="rounded-xl">
+        class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
+    <div class="py-6 px-5 lg:flex">
+        <div class="flex-1 lg:mr-8">
+            {{-- TODO --}}
+            <img src="./images/illustration-1.png" alt="Blog Post illustration" class="rounded-xl">
         </div>
 
-        <div class="mt-8 flex flex-col justify-between">
-            <header>
+        <div class="flex-1 flex flex-col justify-between">
+            <header class="mt-8 lg:mt-0">
                 <div class="space-x-2">
                     <a href="/categories/{{$post->category->slug}}"
                        class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
@@ -27,7 +27,7 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-4">
+            <div class="text-sm mt-2">
                 <p>{{$post->excerpt}}</p>
             </div>
 
@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="hidden lg:block">
                     <a href="/post/{{$post->slug}}"
                        class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8"
                     >Read More</a>
