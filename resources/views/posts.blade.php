@@ -13,10 +13,9 @@
         @foreach ($posts as $post)
         <article>
             <h2><a href="/posts/{{$post->slug}}">{{$post->title}}</a></h2>
-            <p><a href="/categories/{{$post->category->slug}}">{{$post->category->name}}</a></p>
+            <p>By <a href="/authors/{{$post->author->username}}">{{$post->author->name}}</a> in <a href="/categories/{{$post->category->slug}}">{{$post->category->name}}</a></p>
             {{$post->excerpt}}
         </article>
         @endforeach
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad adipisci alias assumenda at aut cum delectus dicta eaque, iure laborum mollitia quasi quibusdam reprehenderit, totam ullam veniam vero voluptate.</p>
     </body>
 </html>

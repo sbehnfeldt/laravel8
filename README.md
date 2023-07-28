@@ -255,3 +255,5 @@ DatabaseSeeder::run()
 ## Lesson 28: Turbo Boost With Factories
 Use factories to improve seeding
 
+## Lesson 29: View All Posts by an Author
+

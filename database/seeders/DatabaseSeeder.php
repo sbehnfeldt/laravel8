@@ -22,8 +22,21 @@ class DatabaseSeeder extends Seeder
         $author = User::factory()->create([
             'name' => 'Bob Buttons'
         ]) ;
-
         Post::factory(5)->create([
+            'author_id' => $author->id
+        ]);
+
+        $author = User::factory()->create([
+            'name' => 'Betty Bingo'
+        ]) ;
+        Post::factory(4)->create([
+            'author_id' => $author->id
+        ]);
+
+        $author = User::factory()->create([
+            'name' => 'Benny Banjo'
+        ]) ;
+        Post::factory(3)->create([
             'author_id' => $author->id
         ]);
     }
