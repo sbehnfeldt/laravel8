@@ -268,3 +268,5 @@ Use factories to improve seeding
 * Component props
 * Timestamps are instances of Carbon objects
 * @props() in Blade components
+
+## Lesson 33: Convert the Blog Post Page
