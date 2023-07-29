@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Helpers\Utilities;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,8 +23,8 @@ class CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->word,
-            'slug' => $this->faker->unique()->slug
+            'name' => $name = ucwords( $this->faker->unique()->word ),
+            'slug' => Utilities::snakify($name)
         ];
     }
 }

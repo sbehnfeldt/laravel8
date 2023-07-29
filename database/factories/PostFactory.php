@@ -2,9 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Helpers\Utilities;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
+use Hamcrest\Util;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,12 +25,21 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence,
+            'title' => $title = $this->faker->sentence,
             'author_id' => User::factory(),
             'category_id' => Category::factory(),
-            'slug' => $this->faker->slug,
+            'slug' => Utilities::snakify($title),
             'excerpt' => $this->faker->sentence,
-            'body' => '<p>' . $this->faker->paragraph . '</p>'
+            'body' => $this->fakeBody()
         ];
+    }
+
+    public function fakeBody()
+    {
+        $body = '';
+        for ( $i = 0; $i < 6; $i++ ) {
+            $body .= '<p>' . $this->faker->paragraph . '</p>';
+        }
+        return $body;
     }
 }

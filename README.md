@@ -270,3 +270,7 @@ Use factories to improve seeding
 * @props() in Blade components
 
 ## Lesson 33: Convert the Blog Post Page
+
+## Lesson 34: A Small JavaScript Dropdown Detour
+Dynamic drop-down control for categories using ApineJS
+Added snakify utility to convert titles into slugs
