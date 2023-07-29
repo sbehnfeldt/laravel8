@@ -22,7 +22,7 @@ Route::get('/', function () {
         'posts' => Post::latest( 'published_at')->with(['category', 'author'])->get(),
         'categories' => Category::all()
     ]);
-});
+})->name( 'home' );
 
 Route::get('/posts', function () {
     return redirect('/');
@@ -47,7 +47,7 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         'categories' => Category::all(),
         'currentCategory' => $category
     ]);
-});
+})->name( 'category');
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('posts', [

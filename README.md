@@ -274,3 +274,7 @@ Use factories to improve seeding
 ## Lesson 34: A Small JavaScript Dropdown Detour
 Dynamic drop-down control for categories using ApineJS
 Added snakify utility to convert titles into slugs
+
+## Lesson 35: How to Extract a Dropdown Blade Component
+Built a drop-down component with a default slot, a named slot and a prop
+Also extracted the SVG down-arrow to a generic "icon" component
