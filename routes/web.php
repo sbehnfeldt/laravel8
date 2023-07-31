@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,6 @@ Route::get('/posts', function () {
 
 // Find a post by its slug and pass it to a view called "post"
 Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name( 'post');
+
+Route::get( '/register', [RegisterController::class, 'create']);
+Route::post( '/register', [RegisterController::class, 'store']);

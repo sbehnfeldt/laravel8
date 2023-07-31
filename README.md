@@ -334,3 +334,7 @@ Adjust the QueryBuild for the 'search' term in the Post class' scopeFilter() met
 Return `paginate()` instead of `get()`.  Assumes TailWind styling.
 `$> php artisan vendor:publish` to copy publisher files (such as pagination Blade views) to local repo
 
+## Section 9: Forms and Authentication
+### Lesson 45: Build a Register User Page
+By convention, controller's "create()" method displays form, "store()" method validates/stores submitted form  
+`request->validate() method`  
