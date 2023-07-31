@@ -311,5 +311,8 @@ QueryBuilder 'when()' method
 Add filtering by 'category' in the query string (2 ways)  
 Increasingly advanced query-builder functionality: whereExists(), whereHas(), whereColumn()
 
+### Lesson 40: Extract a Category Dropdown Blade Component
+Build <x-category-dropdown> component that builds on our previous <x-dropdown> component and uses a corresponding CategoryDropdown class.
+The component is rendered by calling the class's "render" function, which therefore must include all information the component requires.
 
-
+Also refactored Post-related Blade templates into a "posts" directory.
