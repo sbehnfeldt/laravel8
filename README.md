@@ -324,3 +324,7 @@ Converted "authors" page to use query string
 ### Lesson 42: Merge Category and Search Queries
 When both a category AND a search string are selected, search for the string ONLY in those categories; 
 AND make sure the result page has both the category drop-down and search field field in properly
+
+### Lesson 43: Fix a Confusing Eloquent Query Bug
+Adjust the QueryBuild for the 'search' term in the Post class' scopeFilter() method to fix the boolean condition of the where clause. 
+
