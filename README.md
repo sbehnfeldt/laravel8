@@ -328,3 +328,9 @@ AND make sure the result page has both the category drop-down and search field f
 ### Lesson 43: Fix a Confusing Eloquent Query Bug
 Adjust the QueryBuild for the 'search' term in the Post class' scopeFilter() method to fix the boolean condition of the where clause. 
 
+
+## Section 8: Pagination
+### Lesson 44: Laughably Simple Pagination
+Return `paginate()` instead of `get()`.  Assumes TailWind styling.
+`$> php artisan vendor:publish` to copy publisher files (such as pagination Blade views) to local repo
+
