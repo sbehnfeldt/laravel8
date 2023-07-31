@@ -29,8 +29,12 @@ class PostFactory extends Factory
             'author_id' => User::factory(),
             'category_id' => Category::factory(),
             'slug' => Utilities::snakify($title),
-            'excerpt' => $this->faker->sentence,
-            'body' => $this->fakeBody()
+            'excerpt' => implode( '', array_map( function($el) {
+                return '<p>'.$el.'</p>';
+            }, $this->faker->paragraphs(2))),
+            'body' => implode( '', array_map( function($el) {
+                return '<p>'.$el.'</p>';
+            }, $this->faker->paragraphs(10))),
         ];
     }
 
