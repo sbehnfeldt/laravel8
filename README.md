@@ -295,3 +295,11 @@ Also extracted the SVG down-arrow to a generic "icon" component
 Search for items in query string with `request('')`   
 Build up a query incrementally, triggering it finally with `"->get()"`
 
+### Lesson 38: Search (The Cleaner Way)
+Controller classes  
+Query Scopes: 
+* `public function scopeFoo(QueryBuilder $query)` in the Model class 
+* call `$model->foo()`
+* QueryBuilder automatically passed as 1st parameter  
+
+QueryBuilder 'when()' method
