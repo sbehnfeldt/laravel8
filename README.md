@@ -316,3 +316,7 @@ Build <x-category-dropdown> component that builds on our previous <x-dropdown> c
 The component is rendered by calling the class's "render" function, which therefore must include all information the component requires.
 
 Also refactored Post-related Blade templates into a "posts" directory.
+
+
+### Lesson 41: Author Filtering
+Converted "authors" page to use query string

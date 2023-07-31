@@ -13,7 +13,7 @@ class PostController extends Controller
     {
         return view('posts.index', [
             'posts'      => Post::latest('published_at')
-                ->filter(request(['search', 'category']))
+                ->filter(request(['search', 'category', 'author']))
                 ->with(['category', 'author'])
                 ->get(),
             'currentCategory' => Category::firstWhere( 'slug', request( 'category'))
