@@ -290,3 +290,8 @@ Also extracted the SVG down-arrow to a generic "icon" component
 
 
 ## Section 6: Search
+
+### Lesson 37: Search (The Messy Way)
+Search for items in query string with `request('')`   
+Build up a query incrementally, triggering it finally with `"->get()"`
+
