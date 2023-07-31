@@ -320,3 +320,7 @@ Also refactored Post-related Blade templates into a "posts" directory.
 
 ### Lesson 41: Author Filtering
 Converted "authors" page to use query string
+
+### Lesson 42: Merge Category and Search Queries
+When both a category AND a search string are selected, search for the string ONLY in those categories; 
+AND make sure the result page has both the category drop-down and search field field in properly
