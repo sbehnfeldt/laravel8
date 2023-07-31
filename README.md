@@ -303,3 +303,13 @@ Query Scopes:
 * QueryBuilder automatically passed as 1st parameter  
 
 QueryBuilder 'when()' method
+
+
+## Section 7: Filtering
+
+### Lesson 39: Advanced Eloquent Query Constraints
+Add filtering by 'category' in the query string (2 ways)  
+Increasingly advanced query-builder functionality: whereExists(), whereHas(), whereColumn()
+
+
+
