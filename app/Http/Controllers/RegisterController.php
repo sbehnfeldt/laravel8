@@ -31,7 +31,8 @@ class RegisterController extends Controller
         // but gets inserted into the database encrypted,
         // despite what is shown in https://laracasts.com/series/laravel-8-from-scratch/episodes/46.
         // (This may be due to the "$casts" member of User class?)
-        User::create($attributes);
+        $user = User::create($attributes);
+        auth()->login($user);
 
         session()->flash( 'success', 'Your account has been created');
         return redirect( '/' );

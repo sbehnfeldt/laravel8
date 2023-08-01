@@ -357,3 +357,8 @@ session()->flash( 'success', 'Your account has been created');
       <p>{{session('success')}}</p>
   </div>
 @endif
+
+### Lesson 49: Login and Logout
+auth() and guest() Laravel helpers: auth()->login(), auth()->check(), auth()->logout()
+@guest and @auth Blade directives
+middleware('auth') and middleware( 'guest') for routes
