@@ -362,3 +362,10 @@ session()->flash( 'success', 'Your account has been created');
 auth() and guest() Laravel helpers: auth()->login(), auth()->check(), auth()->logout()
 @guest and @auth Blade directives
 middleware('auth') and middleware( 'guest') for routes
+
+
+### Lesson 50: Build the Log In Page
+Created login page and associated login validation
+
+### 
+
