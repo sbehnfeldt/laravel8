@@ -8,6 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application as ApplicationAlias;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -20,8 +21,8 @@ class RegisterController extends Controller
     {
         $attributes = request()->validate([
             'name'     => ['required', 'min:8', 'max:255'],
-            'username' => ['required', 'min:3', 'max:64'],
-            'email'    => ['required', 'max:255', 'email'],
+            'username' => ['required', 'min:3', 'max:64', 'unique:users,username'],
+            'email'    => ['required', 'max:255', 'email', Rule::unique('users', 'email')],   // alternative approach to "unique" rule
             'password' => ['required', 'min:8', 'max:64']
         ]);
         // If validation fails, Laravel auto redirects to previous page

@@ -341,3 +341,7 @@ By convention, controller's "create()" method displays form, "store()" method va
 
 ### Lesson 46: Automatic Password Hashing with Mutators
 Mutators and also accessors
+
+### Lesson 47: Failed Validation and Old Input Data
+"@error" Blade directive and "old()" method to display inline validation-error messages on form page
+"$errors" variable to display validation-error messages as a group: $errors->any(), $errors->all()
