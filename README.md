@@ -367,5 +367,12 @@ middleware('auth') and middleware( 'guest') for routes
 ### Lesson 50: Build the Log In Page
 Created login page and associated login validation
 
-### 
+### Lesson 51: Laravel Breeze Quick Peek
+Authentication starter kit
+```shell
+$> composer require laravel/breeze --dev
+$> php artisan breeze:install
+$> npm install
+$> npm run dev
+```
 
