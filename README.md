@@ -338,3 +338,6 @@ Return `paginate()` instead of `get()`.  Assumes TailWind styling.
 ### Lesson 45: Build a Register User Page
 By convention, controller's "create()" method displays form, "store()" method validates/stores submitted form  
 `request->validate() method`  
+
+### Lesson 46: Automatic Password Hashing with Mutators
+Mutators and also accessors

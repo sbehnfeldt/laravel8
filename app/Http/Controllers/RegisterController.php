@@ -26,6 +26,10 @@ class RegisterController extends Controller
         ]);
         // If validation fails, Laravel auto redirects to previous page
 
+        // Password is still plain text at this point,
+        // but gets inserted into the database encrypted,
+        // despite what is shown in https://laracasts.com/series/laravel-8-from-scratch/episodes/46.
+        // (This may be due to the "$casts" member of User class?)
         User::create($attributes);
 
         return redirect( '/' );
