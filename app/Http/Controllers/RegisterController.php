@@ -20,7 +20,7 @@ class RegisterController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'name'     => ['required', 'min:8', 'max:255'],
+            'name'     => ['required', 'min:3', 'max:255'],
             'username' => ['required', 'min:3', 'max:64', 'unique:users,username'],
             'email'    => ['required', 'max:255', 'email', Rule::unique('users', 'email')],   // alternative approach to "unique" rule
             'password' => ['required', 'min:8', 'max:64']
@@ -33,6 +33,8 @@ class RegisterController extends Controller
         // (This may be due to the "$casts" member of User class?)
         User::create($attributes);
 
+        session()->flash( 'success', 'Your account has been created');
         return redirect( '/' );
+//        return redirect( '/' )->with( 'success', 'Your account has been created');
     }
 }

@@ -345,3 +345,15 @@ Mutators and also accessors
 ### Lesson 47: Failed Validation and Old Input Data
 "@error" Blade directive and "old()" method to display inline validation-error messages on form page
 "$errors" variable to display validation-error messages as a group: $errors->any(), $errors->all()
+
+### Lesson 48: Show a Success Flash Message
+session()->flash( 'success', 'Your account has been created');
+
+@if(session()->has( 'success'))
+  <div x-data="{ show: true }"
+    x-init="setTimeout(() => show = false, 4000)"
+    x-show="show"
+    class="fixed bottom-3 right-3 bg-blue-500 text-white py-2 px-4 rounded-xl text-sm">
+      <p>{{session('success')}}</p>
+  </div>
+@endif
