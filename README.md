@@ -376,3 +376,6 @@ $> npm install
 $> npm run dev
 ```
 
+## Section 10: Comments
+### Lesson 52: Write the Markup for a Post Comment
+

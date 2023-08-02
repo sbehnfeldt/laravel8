@@ -48,6 +48,20 @@
                         {!! $post->body !!}
                     </div>
                 </div>
+
+                <section class="comments col-start-5 col-span-8 mt-10 space-y-6">
+                    <x-post-comment>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti
+                            laboriosam quam saepe soluta suscipit temporibus! Amet animi assumenda eius eos
+                            laboriosam magnam molestias praesentium quae quibusdam similique, totam vel.</p>
+                    </x-post-comment>
+                    <x-post-comment>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cum dicta doloremque enim
+                            labore omnis quos recusandae ullam vitae voluptates. At distinctio dolorem eius ipsam nobis
+                            optio sunt tempore ullam!</p>
+                    </x-post-comment>
+
+                </section>
             </article>
         </main>
     </section>
