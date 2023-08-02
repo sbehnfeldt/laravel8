@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text( 'body' );
             $table->timestamp('published_at' )->nullable();
             $table->timestamps();
+
+            $table->foreign('author_id')->references('id')->on( 'users')->cascadeOnDelete();
         });
     }
 

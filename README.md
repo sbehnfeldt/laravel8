@@ -379,3 +379,14 @@ $> npm run dev
 ## Section 10: Comments
 ### Lesson 52: Write the Markup for a Post Comment
 
+### Lesson 53: Table Consistency and Foreign Key Constraints
+```php
+$table->unsignedBigInteger( 'post_id');
+$table->foreign( 'post_id')->refreences( 'id')->on( 'posts')->cascadeOnDelete();
+```
+aka:
+```php
+$table->foreignId( 'post_id')->constrained($table, $column)->cascadeOnDelete();
+```
+($table and $column have default values based on assumed table and column naming conventions)
+
