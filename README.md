@@ -394,3 +394,4 @@ $table->foreignId( 'post_id')->constrained($table, $column)->cascadeOnDelete();
 ### Lesson 54: Make the Comments Section Dynamic
 Seed comment table.
 
+### Lesson 55: Design the Comment Form
