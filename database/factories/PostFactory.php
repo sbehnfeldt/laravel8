@@ -31,10 +31,10 @@ class PostFactory extends Factory
             'slug' => Utilities::snakify($title),
             'excerpt' => implode( '', array_map( function($el) {
                 return '<p>'.$el.'</p>';
-            }, $this->faker->paragraphs(2))),
+            }, $this->faker->paragraphs(rand(1,2)))),
             'body' => implode( '', array_map( function($el) {
                 return '<p>'.$el.'</p>';
-            }, $this->faker->paragraphs(10))),
+            }, $this->faker->paragraphs(rand(5,10)))),
         ];
     }
 

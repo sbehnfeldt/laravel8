@@ -390,3 +390,7 @@ $table->foreignId( 'post_id')->constrained($table, $column)->cascadeOnDelete();
 ```
 ($table and $column have default values based on assumed table and column naming conventions)
 
+
+### Lesson 54: Make the Comments Section Dynamic
+Seed comment table.
+
