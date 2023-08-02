@@ -399,3 +399,7 @@ Seed comment table.
 ### Lesson 56: Activate the Comment Form
 Show/hide various parts of the form page based on whether current user is logged in.  
 Submit form, save comment.
+
+### Lesson 57: Some Light Chapter Clean Up
+Extract the "Comment" form and "Submit" button to Blade components
+
