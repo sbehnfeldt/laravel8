@@ -395,3 +395,7 @@ $table->foreignId( 'post_id')->constrained($table, $column)->cascadeOnDelete();
 Seed comment table.
 
 ### Lesson 55: Design the Comment Form
+
+### Lesson 56: Activate the Comment Form
+Show/hide various parts of the form page based on whether current user is logged in.  
+Submit form, save comment.

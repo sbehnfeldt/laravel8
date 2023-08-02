@@ -25,7 +25,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $title = $this->faker->sentence,
+            'title' => $title = substr( $this->faker->sentence, 0, -1),   // drop tailing period
             'author_id' => User::factory(),
             'category_id' => Category::factory(),
             'slug' => Utilities::snakify($title),
