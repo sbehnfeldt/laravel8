@@ -411,3 +411,5 @@ Extract the "Comment" form and "Submit" button to Blade components
 * Followed mailchimp quick start https://mailchimp.com/developer/marketing/guides/quick-start/
 * Created /ping route for testing mailchimp api endpoints
 
+### Lesson 59: Make the Newsletter Form Work
+Accept form submission, validate, add email address to mailchimp list, reply with success/error message

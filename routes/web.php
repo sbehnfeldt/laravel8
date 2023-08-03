@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Validation\ValidationException;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +24,19 @@ Route::get('/posts', function () {
     return redirect('/');
 });
 
-Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name( 'post');
-Route::post('/posts/{post:slug}/comments', [CommentController::class, 'store'])->name( 'post')->middleware('auth');
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('post');
+Route::post('/posts/{post:slug}/comments', [CommentController::class, 'store'])->name('post')->middleware('auth');
 
-Route::get( '/register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post( '/register', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
-Route::get( '/login', [SessionsController::class, 'create'])->middleware( 'guest');
-Route::post( '/login', [SessionsController::class, 'store'])->middleware( 'guest');
-Route::post( '/logout', [SessionsController::class, 'destroy'])->middleware( 'auth');
+Route::get('/login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('/login', [SessionsController::class, 'store'])->middleware('guest');
+Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
-Route::get( '/ping', function() {
-//    require_once('/path/to/MailchimpMarketing/vendor/autoload.php');
+Route::POST('/newsletter', function () {
+    request()->validate(['email' => ['required', 'email']]);
+
 
     $mailchimp = new \MailchimpMarketing\ApiClient();
 
@@ -47,9 +49,16 @@ Route::get( '/ping', function() {
 //    $response = $mailchimp->lists->getAllLists();
 //    $response = $mailchimp->lists->getList('5f0f252d9e');
 //    $response = $mailchimp->lists->getListMembersInfo('5f0f252d9e');
-    $response = $mailchimp->lists->addListMembersInfo('5f0f252d9e', [
-        'email_address' => '?',
-        'status' => 'subscribed'  // subscribed, unsubscribed, cleaned, pending, transactional
-    ]);
-    dd($response);
+
+    try {
+        $mailchimp->lists->addListMember(config('services.mailchimp.newsletter'), [
+            'email_address' => request('email'),
+            'status'        => 'subscribed'  // subscribed, unsubscribed, cleaned, pending, transactional
+        ]);
+    } catch (Exception $e) {
+        throw ValidationException::withMessages([
+            'email' => 'This email could not be added to our newsletter list.'
+        ]);
+    }
+    return redirect('/')->with('success', 'You are now signed up for our newsletter!');
 });

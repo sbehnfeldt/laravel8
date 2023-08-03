@@ -33,6 +33,7 @@ return [
 
     'mailchimp' => [
         'key' => env( 'MAILCHIMP_KEY'),
-        'prefix' => env( 'MAILCHIMP_PREFIX' )
+        'prefix' => env( 'MAILCHIMP_PREFIX' ),
+        'newsletter' => env( 'MAILCHIMP_NEWSLETTER_LIST_ID' )
     ]
 ];
