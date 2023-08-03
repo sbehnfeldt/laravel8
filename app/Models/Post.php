@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'excerpt', 'body'];
+    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'author_id', 'category_id'];
 
 
     public function scopeFilter($query, array $filters)   // Post::newQuery()->search()

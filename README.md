@@ -421,9 +421,14 @@ Move "Subscribe" functionality to a new service class
 Service container (initialized in AppServiceProvider::register()
 PHP Interfaces
 
-## Secition 12: Admin Section
+## Section 12: Admin Section
 ### Lesson 62: Limit Access to Only Admins
 Make placeholder page for entering blog posts.  Add route to same.  Protect route w/ custom middleware. 
 `$> php artisan make:middleware AdminsOnly`  
 * global middleware: runs for every request
 * route-specific middleware: runs only for specified routes
+
+### Lesson 63: Create the Publish Post Form
+Validate the submitted form, create new Post based upon.
+Also corrected some small mistakes throughout the app.
+
