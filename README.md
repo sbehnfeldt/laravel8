@@ -416,3 +416,7 @@ Accept form submission, validate, add email address to mailchimp list, reply wit
 
 ### Lesson 60: Extract a Newsletter Service
 Move "Subscribe" functionality to a new service class
+
+### Lesson 61: Toy Chests and Contracts
+Service container (initialized in AppServiceProvider::register()
+PHP Interfaces
