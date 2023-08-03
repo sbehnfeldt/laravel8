@@ -403,3 +403,11 @@ Submit form, save comment.
 ### Lesson 57: Some Light Chapter Clean Up
 Extract the "Comment" form and "Submit" button to Blade components
 
+## Section 11: Newsletters and APIs
+### Lesson 58: Mailchimp API Tinkering
+* Opened Mailchimp account
+* Added mailchimp config values to .env and config/services.php
+* Added mailchimp composer dependency: `composer require mailchimp/marketing`
+* Followed mailchimp quick start https://mailchimp.com/developer/marketing/guides/quick-start/
+* Created /ping route for testing mailchimp api endpoints
+

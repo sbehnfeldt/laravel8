@@ -32,3 +32,24 @@ Route::post( '/register', [RegisterController::class, 'store'])->middleware('gue
 Route::get( '/login', [SessionsController::class, 'create'])->middleware( 'guest');
 Route::post( '/login', [SessionsController::class, 'store'])->middleware( 'guest');
 Route::post( '/logout', [SessionsController::class, 'destroy'])->middleware( 'auth');
+
+Route::get( '/ping', function() {
+//    require_once('/path/to/MailchimpMarketing/vendor/autoload.php');
+
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => config('services.mailchimp.prefix'),
+    ]);
+
+//    $response = $mailchimp->ping->get();
+//    $response = $mailchimp->lists->getAllLists();
+//    $response = $mailchimp->lists->getList('5f0f252d9e');
+//    $response = $mailchimp->lists->getListMembersInfo('5f0f252d9e');
+    $response = $mailchimp->lists->addListMembersInfo('5f0f252d9e', [
+        'email_address' => '?',
+        'status' => 'subscribed'  // subscribed, unsubscribed, cleaned, pending, transactional
+    ]);
+    dd($response);
+});
