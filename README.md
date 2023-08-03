@@ -413,3 +413,6 @@ Extract the "Comment" form and "Submit" button to Blade components
 
 ### Lesson 59: Make the Newsletter Form Work
 Accept form submission, validate, add email address to mailchimp list, reply with success/error message
+
+### Lesson 60: Extract a Newsletter Service
+Move "Subscribe" functionality to a new service class
