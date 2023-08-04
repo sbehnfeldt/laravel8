@@ -454,4 +454,43 @@ Continue refactoring into smaller and smaller Blade components
 Combine the rules for creating and updating post submission validation into a single function,
 with conditional rules depending on whether creating or updating.
 
+### Lesson 69: All About Authorization
+**Gate facade**  
+Eg, in _AppServiceProvider.php_:
+```php
+    public function boot(): void
+    {
+        //
+        Gate::define('admin', function (User $user) {
+            return ($user->username === 'bbuttons');
+        });
 
+        Blade::if('admin', function() {
+            return request()->user()->can('admin');
+        });
+    }
+```
+... then:
+```php
+Gate::allows('admin');  // returns boolean
+request()->user()->can('admin');  // returns boolean
+request()->user()->cannot('admin');  // returns boolean
+$this->authorize('admin');   // pass through, or else abort(403)
+```
+In Blade:
+```php
+@if(auth()->user()->can( 'admin')) ... @endif
+@can( 'admin') ... @endcan
+```
+**Custom Blade Directives**  
+eg, @admin...@endadmin, corresponding to our Gate named 'admin'
+```php
+Blade::if('admin', function() {
+    return request()->user()?->can('admin'); 
+}
+```
+You can reference Gate abilities as middleware.  
+**Grouping routes in middleware**  
+`php artisan route:list`  
+
+`Route::resource('admin/posts', AdminPostController::class)->except('show');`

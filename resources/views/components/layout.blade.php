@@ -9,9 +9,11 @@
     html {
         scroll-behavior: smooth;
     }
+
     table {
         width: 100%;
     }
+
     td {
         font-size: .8rem;
         padding: .5rem;
@@ -41,11 +43,18 @@
                         <x-slot name="trigger">
                             <button class="text-xs font-bold uppercase">Welcome, {{auth()->user()->name}}!</button>
                         </x-slot>
-                        <x-dropdown-item href="/admin/posts">Posts</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs( 'create.post')">New Post</x-dropdown-item>
-                        <x-dropdown-item href="#" x-data={} @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
+                        @can('admin')
+                            <x-dropdown-item href="/admin/posts">Posts</x-dropdown-item>
+                            <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs( 'create.post')">New
+                                Post
+                            </x-dropdown-item>
+                        @endcan
+                        <x-dropdown-item href="#" x-data={}
+                                         @click.prevent="document.querySelector('#logout-form').submit()">Log Out
+                        </x-dropdown-item>
                     </x-dropdown>
-                    <form id="logout-form" method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">@csrf</form>
+                    <form id="logout-form" method="POST" action="/logout"
+                          class="text-xs font-semibold text-blue-500 ml-6">@csrf</form>
                 @endguest
 
                 <a href="#newsletter"

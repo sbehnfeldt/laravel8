@@ -40,9 +40,11 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 Route::POST('/newsletter', [NewsletterController::class, 'subscribe']);
 
 // Admin
-Route::get( '/admin/posts', [ AdminPostController::class, 'index'])->name( 'posts.table')->middleware('admin');
-Route::post( '/admin/posts', [ AdminPostController::class, 'store'])->middleware('admin');
-Route::get( '/admin/posts/create', [ AdminPostController::class, 'create'])->name( 'create.post')->middleware('admin');
-Route::get( '/admin/posts/{post:slug}/edit', [ AdminPostController::class, 'edit'])->name( 'edit.post')->middleware('admin');
-Route::patch( '/admin/posts/{post}', [ AdminPostController::class, 'update'])->name( 'update.post')->middleware('admin');
-Route::delete( '/admin/posts/{post}', [ AdminPostController::class, 'destroy'])->name( 'delete.post')->middleware('admin');
+Route::middleware('can:admin')->group(function() {
+    Route::get( '/admin/posts', [ AdminPostController::class, 'index'])->name( 'posts.table');
+    Route::post( '/admin/posts', [ AdminPostController::class, 'store']);
+    Route::get( '/admin/posts/create', [ AdminPostController::class, 'create'])->name( 'create.post');
+    Route::get( '/admin/posts/{post:slug}/edit', [ AdminPostController::class, 'edit'])->name( 'edit.post');
+    Route::patch( '/admin/posts/{post}', [ AdminPostController::class, 'update'])->name( 'update.post');
+    Route::delete( '/admin/posts/{post}', [ AdminPostController::class, 'destroy'])->name( 'delete.post');
+});
