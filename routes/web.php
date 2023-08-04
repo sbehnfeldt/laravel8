@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PostController;
@@ -38,5 +39,10 @@ Route::post('/logout', [SessionsController::class, 'destroy'])->middleware('auth
 
 Route::POST('/newsletter', [NewsletterController::class, 'subscribe']);
 
-Route::get( '/admin/posts/create', [ PostController::class, 'create'])->name( 'create.post')->middleware('admin');
-Route::post( '/admin/posts', [ PostController::class, 'store'])->middleware('admin');
+// Admin
+Route::get( '/admin/posts', [ AdminPostController::class, 'index'])->name( 'posts.table')->middleware('admin');
+Route::post( '/admin/posts', [ AdminPostController::class, 'store'])->middleware('admin');
+Route::get( '/admin/posts/create', [ AdminPostController::class, 'create'])->name( 'create.post')->middleware('admin');
+Route::get( '/admin/posts/{post:slug}/edit', [ AdminPostController::class, 'edit'])->name( 'edit.post')->middleware('admin');
+Route::patch( '/admin/posts/{post}', [ AdminPostController::class, 'update'])->name( 'update.post')->middleware('admin');
+Route::delete( '/admin/posts/{post}', [ AdminPostController::class, 'destroy'])->name( 'delete.post')->middleware('admin');

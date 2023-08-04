@@ -444,6 +444,9 @@ Also corrected some small mistakes throughout the app.
 ### Lesson 65: Extract Form-Specific Blade Components
 Simplify the "New Blog Post" form by extracting highly-styled bits into Blade components.
 
-### Lesson 67: Expand the Admin Layout
+### Lesson 66: Expand the Admin Layout
 Continue refactoring into smaller and smaller Blade components
+
+### Lesson 67: Create a Form to Edit and Delete Posts
+@method() directive
 

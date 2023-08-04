@@ -9,6 +9,14 @@
     html {
         scroll-behavior: smooth;
     }
+    table {
+        width: 100%;
+    }
+    td {
+        font-size: .8rem;
+        padding: .5rem;
+        border: 1px solid gray;
+    }
 
     a {
         color: green;
@@ -33,7 +41,7 @@
                         <x-slot name="trigger">
                             <button class="text-xs font-bold uppercase">Welcome, {{auth()->user()->name}}!</button>
                         </x-slot>
-                        <x-dropdown-item href="/admin/dashboard">Dashboard</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts">Posts</x-dropdown-item>
                         <x-dropdown-item href="/admin/posts/create" :active="request()->routeIs( 'create.post')">New Post</x-dropdown-item>
                         <x-dropdown-item href="#" x-data={} @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
                     </x-dropdown>

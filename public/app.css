@@ -22,3 +22,9 @@ article + article {
 a {
     color: green;
 }
+table {
+    collapse: collapse;
+}
+th, td {
+    border: 1px solid gray;
+}
