@@ -1,7 +1,7 @@
 @props(['trigger'])
 
 {{-- "show" variable does not "bleed out" of the component --}}
-<div x-data="{show: false}" @click.away="show=false">
+<div x-data="{show: false}" @click.away="show=false" class="relative">
     {{-- Trigger --}}
     <div @click="show = !show">
         {{ $trigger }}

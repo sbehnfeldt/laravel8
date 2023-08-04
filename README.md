@@ -441,6 +441,9 @@ Also corrected some small mistakes throughout the app.
 * .env file: FILESYSTEM_DISK=public
 * Exposing storage/app/public: php artisan storage:link 
 
-
 ### Lesson 65: Extract Form-Specific Blade Components
 Simplify the "New Blog Post" form by extracting highly-styled bits into Blade components.
+
+### Lesson 67: Expand the Admin Layout
+Continue refactoring into smaller and smaller Blade components
+
