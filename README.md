@@ -432,3 +432,11 @@ Make placeholder page for entering blog posts.  Add route to same.  Protect rout
 Validate the submitted form, create new Post based upon.
 Also corrected some small mistakes throughout the app.
 
+### Lesson 64: Validate and Store Post Thumbnails
+* form enctype="multipart/form-data for uploading a file
+* `UploadedFile` class: `store()`
+* config/filesystems.php: local, public, s3
+* `storage_path()`: path to project's `storage` directory
+* `$path = request()->file( 'thumbnail' )->store('thumbnails')`
+* .env file: FILESYSTEM_DISK=public
+* Exposing storage/app/public: php artisan storage:link 

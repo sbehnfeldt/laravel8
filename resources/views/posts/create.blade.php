@@ -1,7 +1,8 @@
 <x-layout>
-    <section class="px-6 py-8">
-        <x-panel class="max-w-sm mx-auto">
-            <form method="POST" action="/admin/posts">
+    <section class="py-8 max-w-md mx-auto">
+        <h1 class="text-lg font-bold mb-4">Publish New Post</h1>
+        <x-panel>
+            <form method="POST" action="/admin/posts" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-6">
@@ -16,10 +17,23 @@
                 <div class="mb-6">
                     <label for="excerpt" class="block mb02 uppercase font-bold text-xs text-gray-700">Excerpt</label>
                     <textarea class="border border-gray-400 p-2 w-full"
-                              name="excerpt" id="excerpt" value="{{old('excerpt')}}" required></textarea>
+                              name="excerpt" id="excerpt" required></textarea>
                     @error('excerpt')
                     <p class="text-red-500 text-xs mt-2">{{$mesage}}</p>
                     @enderror
+                </div>
+
+                <div class="mb-6">
+                    <label for="thumbnail" class="block mb-2 uppercase font-bold text-xs text-gray-700">
+                        Thumbnail
+                    </label>
+
+                    <input type="file" class="border border-gray-400 p-2 w-full" name="thumbnail" id="thumbnail"
+                           required>
+                    @error('thumbnail')
+                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
+                    @enderror
+
                 </div>
 
                 <div class="mb-6">
@@ -33,7 +47,7 @@
 
                 <div class="mb-6">
                     <label for="category" class="block mb02 uppercase font-bold text-xs text-gray-700">Category</label>
-                    <select name="category_id" id="category_id" >
+                    <select name="category_id" id="category_id">
                         @php
                             $categories = \App\Models\Category::all()->sortBy( 'name' );
                         @endphp
