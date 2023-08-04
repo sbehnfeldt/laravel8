@@ -5,48 +5,13 @@
             <form method="POST" action="/admin/posts" enctype="multipart/form-data">
                 @csrf
 
-                <div class="mb-6">
-                    <label for="title" class="block mb02 uppercase font-bold text-xs text-gray-700">Title</label>
-                    <input type="text" class="border border-gray-400 p-2 w-full"
-                           name="title" id="title" value="{{old('title')}}" required>
-                    @error('title')
-                    <p class="text-red-500 text-xs mt-2">{{$mesage}}</p>
-                    @enderror
-                </div>
+                <x-form.input name="title"></x-form.input>
+                <x-form.textarea name="excerpt"></x-form.textarea>
+                <x-form.textarea class="textarea" name="body"></x-form.textarea>
+                <x-form.input name="thumbnail" type="file"></x-form.input>
 
-                <div class="mb-6">
-                    <label for="excerpt" class="block mb02 uppercase font-bold text-xs text-gray-700">Excerpt</label>
-                    <textarea class="border border-gray-400 p-2 w-full"
-                              name="excerpt" id="excerpt" required></textarea>
-                    @error('excerpt')
-                    <p class="text-red-500 text-xs mt-2">{{$mesage}}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="thumbnail" class="block mb-2 uppercase font-bold text-xs text-gray-700">
-                        Thumbnail
-                    </label>
-
-                    <input type="file" class="border border-gray-400 p-2 w-full" name="thumbnail" id="thumbnail"
-                           required>
-                    @error('thumbnail')
-                    <p class="text-red-500 text-xs mt-2">{{$message}}</p>
-                    @enderror
-
-                </div>
-
-                <div class="mb-6">
-                    <label for="body" class="block mb02 uppercase font-bold text-xs text-gray-700">Body</label>
-                    <textarea class="border border-gray-400 p-2 w-full"
-                              name="body" id="body" value="{{old('body')}}" required></textarea>
-                    @error('body')
-                    <p class="text-red-500 text-xs mt-2">{{$mesage}}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <label for="category" class="block mb02 uppercase font-bold text-xs text-gray-700">Category</label>
+                <x-form.field>
+                    <x-form.label name="category" />
                     <select name="category_id" id="category_id">
                         @php
                             $categories = \App\Models\Category::all()->sortBy( 'name' );
@@ -57,13 +22,10 @@
                                     {{old('category_id') == $cat->id ? 'selected' : '' }}>{{$cat->name}}</option>
                         @endforeach
                     </select>
+                    <x-form.error name="category"></x-form.error>
+                </x-form.field>
 
-                    @error('category')
-                    <p class="text-red-500 text-xs mt-2">{{$mesage}}</p>
-                    @enderror
-                </div>
-
-                <x-submit-button>Publish</x-submit-button>
+                <x-form.submit-button>Publish</x-form.submit-button>
             </form>
         </x-panel>
 

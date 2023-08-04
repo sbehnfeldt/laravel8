@@ -440,3 +440,7 @@ Also corrected some small mistakes throughout the app.
 * `$path = request()->file( 'thumbnail' )->store('thumbnails')`
 * .env file: FILESYSTEM_DISK=public
 * Exposing storage/app/public: php artisan storage:link 
+
+
+### Lesson 65: Extract Form-Specific Blade Components
+Simplify the "New Blog Post" form by extracting highly-styled bits into Blade components.
