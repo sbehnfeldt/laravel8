@@ -450,3 +450,8 @@ Continue refactoring into smaller and smaller Blade components
 ### Lesson 67: Create a Form to Edit and Delete Posts
 @method() directive
 
+### Lesson 68: Group and Store Validation Logic
+Combine the rules for creating and updating post submission validation into a single function,
+with conditional rules depending on whether creating or updating.
+
+
